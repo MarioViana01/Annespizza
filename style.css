@@ -1,16 +1,4 @@
-*{
-    margin:0;
-    padding: 0;
-    
-}
-
-body {
-    background-color: black;
-}
-
-.cabecario{
-display: inline-block;
-}/* --- RESET & VARIÁVEIS --- */
+/* --- RESET & VARIÁVEIS --- */
 * {
     margin: 0;
     padding: 0;
