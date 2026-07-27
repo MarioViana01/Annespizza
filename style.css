@@ -205,3 +205,92 @@ ul { list-style: none; }
     .footer-grid { grid-template-columns: 1fr; }
     .btn-nav-order small { display: none; }
 }
+/* ===== CARROSSEL DE PIZZAS ===== */
+
+/* Wrapper posiciona as setas nas laterais do viewport */
+.carousel {
+    position: relative;
+    margin: 40px 0 20px;
+}
+
+/* Viewport = janela visível; overflow escondido corta o que sai da tela */
+.carousel-viewport {
+    overflow: hidden;
+    margin: 0 60px; /* espaço reservado para as setas nas laterais */
+}
+
+/* Track = fila horizontal com todos os cards; é ela que se move via translateX */
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform .5s ease;
+    transform: translateX(0); /* animação suave ao trocar de slide */
+    will-change: transform;
+}
+
+/* Cada card ocupa 1/4 da viewport (mostra 4 por vez no desktop).
+   flex: 0 0 calc(...) impede que os cards encolham para caber. */
+.carousel-track .pizza-card {
+    flex: 0 0 calc((100% - 60px) / 4); /* 4 cards visíveis com 3 gaps de 20px */
+    box-sizing: border-box;
+    margin: 0; /* zera margens antigas do grid */
+}
+
+/* Botões de navegação (setas) */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--primary-yellow);
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--primary-yellow);
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.3s, color 0.3s;
+}
+.carousel-btn:hover {
+    background: var(--primary-yellow);
+    color: #000;
+}
+.carousel-btn.prev { left: 0; }
+.carousel-btn.next { right: 0; }
+.carousel-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+/* Indicadores (bolinhas) abaixo do carrossel */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+.carousel-dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: #555;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s, transform 0.3s;
+}
+.carousel-dots button.active {
+    background: var(--primary-yellow);
+    transform: scale(1.2);
+}
+
+/* Responsivo: 2 cards no tablet, 1 no mobile */
+@media (max-width: 992px) {
+    .carousel-track .pizza-card {
+        flex: 0 0 calc((100% - 20px) / 2); /* 2 visíveis */
+    }
+}
+@media (max-width: 600px) {
+    .carousel-viewport { margin: 0 50px; }
+    .carousel-track .pizza-card {
+        flex: 0 0 100%; /* 1 visível */
+    }
+}

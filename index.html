@@ -106,32 +106,90 @@
                 <h2>NOSSAS PIZZAS</h2>
             </div>
 
-            <div class="pizza-grid">
-                <div class="pizza-card">
-                    <img src="pizza-calabresa.png" alt="Calabresa">
-                    <h3>CALABRESA</h3>
-                    <p>MUSSARELA, CALABRESA FATIADA E ORÉGANO.</p>
-                    <span class="price">R$ 49,90</span>
-                </div>
-                <div class="pizza-card featured">
-                    <img src="pizza-marguerita.png" alt="Marguerita">
-                    <h3>MARGUERITA</h3>
-                    <p>MUSSARELA, TOMATE FRESCO, MANJERICÃO E AZEITE.</p>
-                    <span class="price">R$ 49,90</span>
-                </div>
-                <div class="pizza-card">
-                    <img src="pizza-frango.png" alt="Frango com Catupiry">
-                    <h3>FRANGO COM CATUPIRY</h3>
-                    <p>MUSSARELA, FRANGO DESFIADO, CATUPIRY E ORÉGANO.</p>
-                    <span class="price">R$ 53,90</span>
-                </div>
-                <div class="pizza-card">
-                    <img src="pizza-portuguesa.png" alt="Portuguesa">
-                    <h3>PORTUGUESA</h3>
-                    <p>MUSSARELA, PRESUNTO, OVOS, CEBOLA, PIMENTÃO E AZEITONAS.</p>
-                    <span class="price">R$ 53,90</span>
+          
+            <!-- Wrapper do carrossel: contém setas + track (trilho que desliza) -->
+          <div class="carousel">
+            <!-- Botão anterior -->
+            <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+
+            <!-- Viewport: área visível que "corta" o track -->
+            <div class="carousel-viewport">
+                <!-- Track: linha horizontal com todos os cards; é ela que se move -->
+                <div class="carousel-track">
+
+                    <!-- Card 1 -->
+                    <article class="pizza-card">
+                        <img src="img/calabresa.png" alt="Calabresa" class="pizza-logo">
+                        <h3>CALABRESA</h3>
+                        <p>MUSSARELA, CALABRESA FATIADA E ORÉGANO.</p>
+                        <span class="price">R$ 49,90</span>
+                    </article>
+
+                    <!-- Card 2 (destaque dourado como no Figma) -->
+                    <article class="pizza-card featured">
+                        <img src="img/marguerita.png" alt="Marguerita" class="pizza-logo">
+                        <h3>MARGUERITA</h3>
+                        <p>MUSSARELA, TOMATE FRESCO, MANJERICÃO E AZEITE.</p>
+                        <span class="price">R$ 49,90</span>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="pizza-card">
+                        <img src="img/frango-catupiry.png" alt="Frango com Catupiry" class="pizza-logo">
+                        <h3>FRANGO COM CATUPIRY</h3>
+                        <p>MUSSARELA, FRANGO DESFIADO, CATUPIRY E ORÉGANO.</p>
+                        <span class="price">R$ 53,90</span>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="pizza-card">
+                        <img src="img/portuguesa.png" alt="Portuguesa" class="pizza-logo">
+                        <h3>PORTUGUESA</h3>
+                        <p>MUSSARELA, PRESUNTO, OVOS, CEBOLA, PIMENTÃO E AZEITONAS.</p>
+                        <span class="price">R$ 53,90</span>
+                    </article>
+
+                    <!-- Card 5 -->
+                    <article class="pizza-card">
+                        <img src="img/quatro-queijos.png" alt="Quatro Queijos" class="pizza-logo">
+                        <h3>QUATRO QUEIJOS</h3>
+                        <p>MUSSARELA, PROVOLONE, PARMESÃO E CATUPIRY.</p>
+                        <span class="price">R$ 55,90</span>
+                    </article>
+
+                    <!-- Card 6 -->
+                    <article class="pizza-card">
+                        <img src="img/pepperoni.png" alt="Pepperoni" class="pizza-logo">
+                        <h3>PEPPERONI</h3>
+                        <p>MUSSARELA, PEPPERONI FATIADO E ORÉGANO.</p>
+                        <span class="price">R$ 57,90</span>
+                    </article>
+
+                    <!-- Card 7 -->
+                    <article class="pizza-card">
+                        <img src="img/bacon.png" alt="Bacon" class="pizza-logo">
+                        <h3>BACON</h3>
+                        <p>MUSSARELA, BACON CROCANTE E CEBOLA CARAMELIZADA.</p>
+                        <span class="price">R$ 55,90</span>
+                    </article>
+
+                    <!-- Card 8 -->
+                    <article class="pizza-card">
+                        <img src="img/chocolate.png" alt="Chocolate" class="pizza-logo">
+                        <h3>CHOCOLATE</h3>
+                        <p>CHOCOLATE AO LEITE, MORANGO E LEITE CONDENSADO.</p>
+                        <span class="price">R$ 39,90</span>
+                    </article>
+
                 </div>
             </div>
+
+            <!-- Botão próximo -->
+            <button class="carousel-btn next" aria-label="Próximo">&#10095;</button>
+        </div>
+
+        <!-- Indicadores (bolinhas) — gerados via JS -->
+        <div class="carousel-dots" aria-hidden="true"></div>
 
             <div class="center-btn">
                 <a href="#" class="btn-secondary">VER CARDÁPIO COMPLETO <i class="fa-solid fa-pizza-slice"></i></a>
@@ -179,7 +237,7 @@
                 <i class="fa-solid fa-phone"></i>
                 <div>
                     <h4>TELEFONE</h4>
-                    <p>(82) 99935-6434</p>
+                    <p>(82) 99947-0270</p>
                     <p>(82) 2222-2222</p>
                 </div>
             </div>
@@ -203,6 +261,6 @@
             </div>
         </div>
     </footer>
-
+<script src="script.js" defer></script>
 </body>
 </html>
