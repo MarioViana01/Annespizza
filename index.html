@@ -5,30 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anne's Pizza - O Melhor Sabor</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Ícones Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Fontes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Yellowtail&display=swap" rel="stylesheet">
+    <!-- Fontes: Montserrat (corpo/títulos) + Yellowtail (script "As mais pedidas") + Bebas (logo alternativo) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;900&family=Yellowtail&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- HEADER / NAVBAR -->
+    <!-- ==================== NAVBAR ==================== -->
+    <!-- Barra superior fixa, fundo preto, borda vermelha embaixo. -->
     <header class="navbar">
         <div class="container nav-container">
-            <div class="logo">
-                <span class="logo-text">Anne's <span>PIZZA</span></span>
+            <!-- LOGO pequeno (imagem redonda do Anne's) no canto esquerdo -->
+            <div class="nav-logo">
+                <img src="img\Anne's pizza 1.png" alt="Anne's Pizza">
             </div>
+
+            <!-- Links de navegação centralizados -->
             <nav>
                 <ul class="nav-links">
                     <li><a href="#" class="active">INÍCIO</a></li>
-                    <li><a href="#">CARDÁPIO</a></li>
-                    <li><a href="#">PROMOÇÕES</a></li>
-                    <li><a href="#">SOBRE NÓS</a></li>
-                    <li><a href="#">CADASTRO/LOGIN</a></li>
+                    <li><a href="#cardapio">CARDÁPIO</a></li>
+                    <li><a href="#promocoes">PROMOÇÕES</a></li>
+                    <li><a href="#sobre">SOBRE NÓS</a></li>
+                    <li><a href="#login">CADASTRO/LOGIN</a></li>
                 </ul>
             </nav>
+
+            <!-- Botão "PEÇA AGORA" vermelho à direita -->
             <a href="#" class="btn-nav-order">
                 <i class="fa-solid fa-motorcycle"></i>
                 <div>
@@ -39,27 +44,27 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- ==================== HERO ==================== -->
+    <!-- Fundo com imagem de fogo/lenha. Texto à esquerda + LOGO redondo grande à direita. -->
     <section class="hero">
         <div class="container hero-container">
             <div class="hero-content">
                 <h1>O MELHOR SABOR,<br>FEITO PARA<br><span class="highlight">VOCÊ!</span></h1>
                 <p>Ingredientes selecionados, massa artesanal e muito amor em cada fatia!</p>
-                <div class="hero-action">
-                    <a href="#" class="btn-primary">
-                        <i class="fa-solid fa-motorcycle"></i> PEÇA AGORA
-                    </a>
-                    <span class="subtext-arrow">Entrega rápida e segura! ➔</span>
-                </div>
+                <a href="#" class="btn-primary">
+                    <i class="fa-solid fa-motorcycle"></i> PEÇA AGORA
+                </a>
+                <span class="subtext-arrow">Entrega rápida e segura! ➔</span>
             </div>
+
+            <!-- Logo grande redondo no centro da pizza (imagem principal do Figma) -->
             <div class="hero-image">
-                <!-- Substituir pelo caminho da sua imagem da pizza/banner -->
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600" alt="Pizza Deliciosa">
+                <img src="img\Anne's pizza 1.png" alt="Anne's Pizza">
             </div>
         </div>
     </section>
 
-    <!-- DIFERENCIAIS / FEATURES -->
+    <!-- ==================== FEATURES (4 ícones vermelhos) ==================== -->
     <section class="features">
         <div class="container features-grid">
             <div class="feature-card">
@@ -77,7 +82,7 @@
                 </div>
             </div>
             <div class="feature-card">
-                <i class="fa-solid fa-fire-flame-curved"></i>
+                <i class="fa-solid fa-fire"></i>
                 <div>
                     <h3>ASSADA NO FORNO A LENHA</h3>
                     <p>Mais sabor e aquele crocante que só o lenha dá.</p>
@@ -93,8 +98,8 @@
         </div>
     </section>
 
-    <!-- MAIS PEDIDAS / CARDÁPIO -->
-    <section class="pizzas-section">
+    <!-- ==================== PIZZAS ==================== -->
+    <section class="pizzas-section" id="cardapio">
         <div class="container">
             <div class="section-title">
                 <span class="subtitle">As mais pedidas</span>
@@ -102,33 +107,29 @@
             </div>
 
             <div class="pizza-grid">
-                <!-- Card 1 -->
                 <div class="pizza-card">
-                    <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=300" alt="Pizza Calabresa">
+                    <img src="pizza-calabresa.png" alt="Calabresa">
                     <h3>CALABRESA</h3>
                     <p>MUSSARELA, CALABRESA FATIADA E ORÉGANO.</p>
-                    <div class="price">R$ 49,90</div>
+                    <span class="price">R$ 49,90</span>
                 </div>
-                <!-- Card 2 -->
-                <div class="pizza-card">
-                    <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=300" alt="Pizza Marguerita">
+                <div class="pizza-card featured">
+                    <img src="pizza-marguerita.png" alt="Marguerita">
                     <h3>MARGUERITA</h3>
                     <p>MUSSARELA, TOMATE FRESCO, MANJERICÃO E AZEITE.</p>
-                    <div class="price">R$ 49,90</div>
+                    <span class="price">R$ 49,90</span>
                 </div>
-                <!-- Card 3 -->
                 <div class="pizza-card">
-                    <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?q=80&w=300" alt="Pizza Frango Catupiry">
+                    <img src="pizza-frango.png" alt="Frango com Catupiry">
                     <h3>FRANGO COM CATUPIRY</h3>
                     <p>MUSSARELA, FRANGO DESFIADO, CATUPIRY E ORÉGANO.</p>
-                    <div class="price">R$ 53,90</div>
+                    <span class="price">R$ 53,90</span>
                 </div>
-                <!-- Card 4 -->
                 <div class="pizza-card">
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=300" alt="Pizza Portuguesa">
+                    <img src="pizza-portuguesa.png" alt="Portuguesa">
                     <h3>PORTUGUESA</h3>
                     <p>MUSSARELA, PRESUNTO, OVOS, CEBOLA, PIMENTÃO E AZEITONAS.</p>
-                    <div class="price">R$ 53,90</div>
+                    <span class="price">R$ 53,90</span>
                 </div>
             </div>
 
@@ -138,31 +139,35 @@
         </div>
     </section>
 
-    <!-- BANNER COMBO FAMÍLIA -->
-    <section class="banner-combo">
-        <div class="container combo-box">
-            <div class="combo-text">
-                <h2>COMBO FAMÍLIA</h2>
-                <p class="combo-desc">2 PIZZAS GRANDES<br>+ REFRI 2L</p>
-                <p class="combo-price">A PARTIR DE <span>R$ 99,90</span></p>
-            </div>
-            <div class="combo-img">
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=400" alt="Combo Família">
-            </div>
-            <div class="combo-cta">
-                <a href="#" class="btn-primary">
-                    <i class="fa-solid fa-motorcycle"></i> PEÇA AGORA
-                </a>
-                <small>O MELHOR COMBO PARA COMPARTILHAR! ➔</small>
+    <!-- ==================== COMBO FAMÍLIA ==================== -->
+    <section class="banner-combo" id="promocoes">
+        <div class="container">
+            <div class="combo-box">
+                <div class="combo-text">
+                    <h2>COMBO<br>FAMÍLIA</h2>
+                </div>
+                <div class="combo-info">
+                    <p class="combo-desc">2 PIZZAS GRANDES<br>+ REFRI 2L</p>
+                    <p class="combo-price">A PARTIR DE <span>R$ 99,90</span></p>
+                </div>
+                <div class="combo-img">
+                    <img src="img\combo familia.png" alt="Combo Família">
+                </div>
+                <div class="combo-cta">
+                    <a href="#" class="btn-primary">
+                        <i class="fa-solid fa-motorcycle"></i> PEÇA AGORA
+                    </a>
+                    <small>O MELHOR COMBO PARA COMPARTILHAR! ➔</small>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" id="sobre">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <span class="logo-text">Anne's <span>PIZZA</span></span>
+                <img src="img\Anne's pizza 1.png" alt="Anne's Pizza" class="footer-logo">
                 <p>Sabor que conquista,<br>qualidade que fica!</p>
                 <div class="socials">
                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -174,13 +179,13 @@
                 <i class="fa-solid fa-phone"></i>
                 <div>
                     <h4>TELEFONE</h4>
-                    <p>(11) 99999-9999</p>
-                    <p>(11) 2222-2222</p>
+                    <p>(82) 99935-6434</p>
+                    <p>(82) 2222-2222</p>
                 </div>
             </div>
 
             <div class="footer-info">
-                <i class="fa-regular fa-clock"></i>
+                <i class="fa-solid fa-clock"></i>
                 <div>
                     <h4>HORÁRIO DE FUNCIONAMENTO</h4>
                     <p>Todos os dias</p>
@@ -193,7 +198,7 @@
                 <div>
                     <h4>ENDEREÇO</h4>
                     <p>Rua das Pizzas, 123</p>
-                    <p>São Paulo - SP</p>
+                    <p>Maceió - AL</p>
                 </div>
             </div>
         </div>
