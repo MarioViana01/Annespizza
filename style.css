@@ -294,3 +294,693 @@ ul { list-style: none; }
         flex: 0 0 100%; /* 1 visível */
     }
 }
+
+
+/* APARTIR DAQUI PAGINA LOGIN*/
+
+/* ====== RESET & VARIÁVEIS ====== */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+
+:root {
+    --bg-dark: #0a0a0a;
+    --bg-fire: #1a0505;        /* Vermelho bem escuro do fundo do hero */
+    --primary-red: #d10000;
+    --primary-red-dark: #7a0000;
+    --primary-yellow: #ffb703;
+    --text-light: #ffffff;
+    --text-gray: #b3b3b3;
+    --card-bg: #141414;
+    --border-gold: #c29b38;
+}
+
+body { background-color: var(--bg-dark); color: var(--text-light); overflow-x: hidden; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ====== NAVBAR ====== */
+.navbar {
+    background-color: #000;
+    border-bottom: 2px solid var(--primary-red);
+    position: sticky; top: 0; z-index: 1000;
+    padding: 10px 0;
+}
+.nav-container { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.nav-logo img { width: 80px; height: 80px; object-fit: contain; }
+
+.nav-links { display: flex; gap: 25px; }
+.nav-links a {
+    font-size: 1.0rem; font-weight: 700; letter-spacing: 1px;
+    transition: 0.3s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--primary-yellow); }
+
+/* Botão vermelho do topo com ícone da moto e duas linhas de texto */
+.btn-nav-order {
+    background-color: var(--primary-red);
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 18px; border-radius: 6px; color: #fff;
+    box-shadow: 0 2px 8px rgba(209,0,0,0.4);
+}
+.btn-nav-order i { font-size: 1.6rem; }
+.btn-nav-order div { display: flex; flex-direction: column; line-height: 1.1; }
+.btn-nav-order strong { font-size: 0.85rem; font-weight: 900; }
+.btn-nav-order small { font-size: 0.55rem; color: var(--primary-yellow); font-weight: 700; }
+
+/* ====== HERO ====== */
+/* Fundo com textura de fogo/madeira. Troque a URL por uma imagem sua se quiser. */
+.hero {
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+        url("img/fundo.jpeg") center/cover no-repeat;
+    padding: 100px 0;
+    position: relative;
+}
+.hero-container {
+    display: flex; align-items: center; justify-content: space-between; gap: 40px;
+}
+.hero-content { max-width: 1000px; }
+.hero-content h1 {
+    font-size: 3.2rem; font-weight: 900; line-height: 1.05;
+    margin-bottom: 20px; text-transform: uppercase;
+    text-shadow: 2px 2px 0 #000;
+}
+.hero-content .highlight { color: var(--primary-yellow); }
+.hero-content p { font-size: 0.95rem; color: var(--text-gray); margin-bottom: 25px; }
+
+/* Botão principal vermelho */
+.btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background-color: var(--primary-red);
+    color: #fff; padding: 14px 28px; font-weight: 900;
+    border-radius: 8px; font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(209,0,0,0.5);
+    transition: 0.3s; text-transform: uppercase;
+}
+.btn-primary:hover { background-color: #a00000; transform: scale(1.03); }
+.subtext-arrow { display: block; margin-top: 10px; color: var(--primary-yellow); font-size: 0.75rem; font-weight: 700; }
+
+/* Logo/pizza grande do hero — redondo, com sombra dourada */
+.hero-image { flex-shrink: 50; }
+.hero-image img {
+    width: 100%; max-width: 520px;
+    border-radius: 90%;
+    box-shadow: 0 0 40px rgba(255, 183, 3, 0.35), 0 0 80px rgba(209,0,0,0.25);
+}
+
+/* ====== FEATURES ====== */
+.features {
+    background-color: #0d0202;
+    border-top: 1px solid #330a0a;
+    border-bottom: 1px solid #330a0a;
+    padding: 25px 0;
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.feature-card { display: flex; align-items: center; gap: 12px; }
+.feature-card i { font-size: 1.8rem; color: var(--primary-red); }
+.feature-card h3 { font-size: 0.8rem; color: var(--primary-yellow); margin-bottom: 3px; letter-spacing: 0.5px; }
+.feature-card p { font-size: 0.7rem; color: var(--text-gray); }
+
+/* ====== PIZZAS ====== */
+.pizzas-section { padding: 60px 0; }
+.section-title { text-align: center; margin-bottom: 40px; }
+.section-title .subtitle {
+    font-family: 'Yellowtail', cursive;
+    color: var(--primary-yellow);
+    font-size: 2rem; display: block;
+}
+.section-title h2 {
+    font-size: 2.3rem; font-weight: 900; letter-spacing: 3px; margin-top: -5px;
+}
+
+.pizza-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+.pizza-card {
+    background-color: var(--card-bg);
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 25px 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+.pizza-card:hover { transform: translateY(-5px); border-color: var(--border-gold); }
+/* Card em destaque (marguerita no Figma) tem borda dourada */
+.pizza-card.featured { border: 2px solid var(--border-gold); box-shadow: 0 0 20px rgba(194,155,56,0.25); }
+
+.pizza-card img {
+    width: 150px; height: 150px; object-fit: cover;
+    border-radius: 50%; margin-bottom: 15px;
+}
+.pizza-card h3 { font-size: 1rem; margin-bottom: 8px; letter-spacing: 1px; }
+.pizza-card p {
+    font-size: 0.7rem; color: var(--text-gray);
+    min-height: 45px; margin-bottom: 15px; line-height: 1.4;
+}
+.pizza-card .price { font-size: 1.2rem; font-weight: 900; color: var(--primary-yellow); }
+
+.center-btn { text-align: center; margin-top: 40px; }
+.btn-secondary {
+    display: inline-block;
+    border: 2px dashed var(--primary-yellow);
+    color: var(--primary-yellow);
+    padding: 12px 25px; font-weight: 700; border-radius: 6px;
+    transition: 0.3s; font-size: 0.85rem; letter-spacing: 1px;
+}
+.btn-secondary:hover { background-color: var(--primary-yellow); color: #000; }
+
+/* ====== COMBO FAMÍLIA ====== */
+.banner-combo { padding: 40px 0 60px 0; }
+.combo-box {
+    background: linear-gradient(90deg, #a00000 0%, #4a0000 100%);
+    border-radius: 12px;
+    padding: 25px 40px;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    box-shadow: 0 10px 30px rgba(209,0,0,0.25);
+}
+.combo-text h2 { font-size: 2.2rem; font-weight: 900; line-height: 1; }
+.combo-info { text-align: left; }
+.combo-desc { font-size: 1rem; font-weight: 700; margin-bottom: 8px; line-height: 1.2; }
+.combo-price { font-size: 0.75rem; }
+.combo-price span { display: block; font-size: 1.8rem; font-weight: 900; color: var(--primary-yellow); }
+
+.combo-img img { width: 250px; }
+.combo-cta { text-align: center; }
+.combo-cta small { display: block; margin-top: 8px; color: var(--primary-yellow); font-size: 0.7rem; font-weight: 700; }
+
+/* ====== FOOTER ====== */
+.footer { background-color: #050505; border-top: 1px solid #222; padding: 40px 0; }
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+.footer-logo { width: 100px; margin-bottom: 8px; }
+.footer-brand p { font-size: 0.8rem; color: var(--text-gray); margin: 8px 0; }
+.socials a { font-size: 1.8rem; margin-right: 20.0px; color: var(--text-light); transition: 0.3s; }
+.socials a:hover { color: var(--primary-yellow); }
+
+.footer-info { display: flex; gap: 12px; }
+.footer-info i { font-size: 1.4rem; color: var(--primary-red); margin-top: 8px; }
+.footer-info h4 { font-size: 0.75rem; color: var(--primary-yellow); margin-bottom: 10px; letter-spacing: 1px; }
+.footer-info p { font-size: 0.75rem; color: var(--text-gray); line-height: 1.5; }
+
+/* ====== RESPONSIVIDADE MOBILE ====== */
+@media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hero-container { flex-direction: column; text-align: center; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .combo-box { flex-direction: column; text-align: center; }
+    .combo-img img { width: 100%; max-width: 220px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 500px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .btn-nav-order small { display: none; }
+}
+
+
+
+
+/* apartir daqui pagina login*/
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    font-family:'Poppins',sans-serif;
+}
+
+.cadastro{
+    width:100%;
+    max-width:1280px;
+    margin:auto;
+    padding:40px 80px;
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.logo{
+    display:flex;
+    justify-content:center;
+    margin-bottom:25px;
+}
+
+.logo img{
+    width:240px;
+}
+
+/* ===========================
+   TITULO
+=========================== */
+
+h1{
+    font-family:'Oswald',sans-serif;
+    font-size:50px;
+    font-weight:600;
+    text-align:center;
+    margin-bottom:45px;
+    letter-spacing:2px;
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+form{
+    width:100%;
+}
+
+.grupo{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:25px;
+}
+
+.grupo label{
+    font-size:15px;
+    margin-bottom:10px;
+    font-weight:500;
+}
+
+.grupo input{
+    width:100%;
+    height:58px;
+    background:transparent;
+    border:2px solid #ffffff;
+    border-radius:14px;
+    color:#fff;
+    padding:0 18px;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+}
+
+.grupo input:focus{
+    border-color:#E11B22;
+    box-shadow:0 0 10px rgba(225,27,34,.4);
+}
+
+/* ===========================
+   COLUNAS
+=========================== */
+
+.duas-colunas{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.tres-colunas{
+    display:grid;
+    grid-template-columns:180px 1fr 1fr;
+    gap:25px;
+    margin-bottom:10px;
+}
+
+.pequeno{
+    max-width:220px;
+}
+
+/* ===========================
+   SENHA
+=========================== */
+
+.senha{
+    position:relative;
+}
+
+.senha i{
+    position:absolute;
+    right:20px;
+    top:20px;
+    cursor:pointer;
+    color:#fff;
+}
+/* ===========================
+   SUBTÍTULO
+=========================== */
+
+h2{
+    font-family:'Oswald',sans-serif;
+    font-size:34px;
+    font-weight:500;
+    margin:50px 0 30px;
+    letter-spacing:1px;
+}
+
+/* ===========================
+   CHECKBOX
+=========================== */
+
+.checkbox{
+    margin:35px 0;
+}
+
+.checkbox label{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    cursor:pointer;
+    font-size:15px;
+    color:#fff;
+}
+
+.checkbox input{
+    display:none;
+}
+
+.checkmark{
+    width:22px;
+    height:22px;
+    border:2px solid #E11B22;
+    border-radius:6px;
+    position:relative;
+    transition:.3s;
+}
+
+.checkbox input:checked + .checkmark{
+    background:#E11B22;
+}
+
+.checkbox input:checked + .checkmark::after{
+    content:"✓";
+    color:#fff;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-55%);
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* ===========================
+   BOTÃO
+=========================== */
+
+.btn-cadastro{
+    width:100%;
+    height:62px;
+    border:none;
+    border-radius:14px;
+    background:#E11B22;
+    color:#fff;
+    font-size:20px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    margin-top:10px;
+}
+
+.btn-cadastro:hover{
+    background:#c3151b;
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(225,27,34,.45);
+}
+
+.btn-cadastro:active{
+    transform:scale(.98);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    margin-top:90px;
+    border-top:1px solid rgba(255,255,255,.15);
+    padding:50px 0;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-logo img{
+    width:170px;
+    margin-bottom:18px;
+}
+
+.footer-logo p{
+    color:#cfcfcf;
+    line-height:26px;
+    margin-bottom:20px;
+}
+
+.redes{
+    display:flex;
+    gap:15px;
+}
+
+.redes a{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#E11B22;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.redes a:hover{
+    transform:translateY(-5px);
+}
+
+.footer-item{
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
+}
+
+.footer-item i{
+    color:#E11B22;
+    font-size:24px;
+    margin-top:4px;
+}
+
+.footer-item h3{
+    font-family:'Oswald',sans-serif;
+    font-size:20px;
+    margin-bottom:10px;
+    letter-spacing:1px;
+}
+
+.footer-item p{
+    color:#d8d8d8;
+    line-height:24px;
+}
+/* ===========================
+   ANIMAÇÕES
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.logo{
+
+    animation:fadeUp .6s ease;
+
+}
+
+h1{
+
+    animation:fadeUp .8s ease;
+
+}
+
+form{
+
+    animation:fadeUp 1s ease;
+
+}
+
+footer{
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+/* ===========================
+   HOVER DOS INPUTS
+=========================== */
+
+.grupo input:hover{
+
+    border-color:#E11B22;
+
+}
+
+/* ===========================
+   PLACEHOLDER
+=========================== */
+
+input::placeholder{
+
+    color:#9b9b9b;
+
+}
+
+/* ===========================
+   BARRA DE ROLAGEM
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#000;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#E11B22;
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#c2151a;
+
+}
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+
+@media(max-width:1100px){
+
+    .cadastro{
+
+        padding:40px;
+
+    }
+
+    footer{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:35px;
+
+    }
+
+}
+
+@media(max-width:850px){
+
+    .duas-colunas{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .tres-colunas{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .pequeno{
+
+        max-width:100%;
+
+    }
+
+    h1{
+
+        font-size:40px;
+
+    }
+
+    h2{
+
+        font-size:28px;
+
+    }
+
+    .logo img{
+
+        width:190px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .cadastro{
+
+        padding:25px;
+
+    }
+
+    footer{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .footer-item{
+
+        justify-content:center;
+
+    }
+
+    .redes{
+
+        justify-content:center;
+
+    }
+
+    .btn-cadastro{
+
+        font-size:18px;
+
+    }
+
+}
