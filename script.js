@@ -73,3 +73,170 @@ moveCarousel();
         });
     });
 })();
+
+
+const links = document.querySelectorAll("nav a");
+
+links.forEach(link => {
+
+    link.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        links.forEach(item=>{
+            item.classList.remove("ativo");
+        });
+
+        this.classList.add("ativo");
+
+    });
+
+});
+
+// ================================
+// EFEITO DOS CARDS
+// ================================
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+    card.addEventListener("mouseenter",()=>{
+
+        card.style.transform="translateY(-10px) scale(1.02)";
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform="translateY(0) scale(1)";
+
+    });
+
+});
+
+// ================================
+// BOTÃO PEÇA AGORA
+// ================================
+
+const botoes = document.querySelectorAll(".btn-header, .btn-banner");
+
+botoes.forEach(botao=>{
+
+    botao.addEventListener("click",(e)=>{
+
+        e.preventDefault();
+
+        alert("Você será redirecionado para o cardápio.");
+
+        // Exemplo:
+        // window.location.href = "cardapio.html";
+
+    });
+
+});
+
+// ================================
+// ANIMAÇÃO AO ROLAR A PÁGINA
+// ================================
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+cards.forEach(card=>{
+
+    observer.observe(card);
+
+});
+
+// ================================
+// ANIMAÇÃO DO TÍTULO
+// ================================
+
+const titulo = document.querySelector(".titulo h1");
+
+let aumentar = true;
+
+setInterval(()=>{
+
+    if(aumentar){
+
+        titulo.style.transform = "scale(1.03)";
+
+    }else{
+
+        titulo.style.transform = "scale(1)";
+
+    }
+
+    aumentar = !aumentar;
+
+},800);
+
+// ================================
+// BOTÃO SUBIR AO TOPO
+// ================================
+
+const subir = document.createElement("button");
+
+subir.innerHTML = "▲";
+
+subir.id = "topo";
+
+document.body.appendChild(subir);
+
+subir.style.cssText = `
+position:fixed;
+right:25px;
+bottom:25px;
+width:50px;
+height:50px;
+border:none;
+border-radius:50%;
+background:#b30000;
+color:white;
+font-size:20px;
+cursor:pointer;
+display:none;
+box-shadow:0 0 15px rgba(255,0,0,.4);
+transition:.3s;
+z-index:999;
+`;
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 300){
+
+        subir.style.display = "block";
+
+    }else{
+
+        subir.style.display = "none";
+
+    }
+
+});
+
+subir.addEventListener("click",()=>{
+
+    window.scrollTo({
+
+        top:0,
+        behavior:"smooth"
+
+    });
+
+});
