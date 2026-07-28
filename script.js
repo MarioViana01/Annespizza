@@ -51,3 +51,25 @@ prevBtn.addEventListener("click", () => {
 window.addEventListener("resize", moveCarousel);
 
 moveCarousel();
+
+/* Filtro simples por categoria — clique numa aba e mostra só os cards
+   cujo data-category bate com o data-filter (ou todos, se "all"). */
+(function () {
+    const buttons = document.querySelectorAll('.cat-item');
+    const cards   = document.querySelectorAll('.menu-card');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Alterna estado ativo dos botões
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+
+            cards.forEach(card => {
+                const show = filter === 'all' || card.dataset.category === filter;
+                card.classList.toggle('hidden', !show);
+            });
+        });
+    });
+})();

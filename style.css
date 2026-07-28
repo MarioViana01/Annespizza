@@ -25,8 +25,8 @@ ul { list-style: none; }
     position: sticky; top: 0; z-index: 1000;
     padding: 10px 0;
 }
-.nav-container { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.nav-logo img { width: 80px; height: 80px; object-fit: contain; }
+.nav-container { display: flex; align-items: center; justify-content: space-between; gap: 0px; }
+.nav-logo img { width: 100px; height: 100px; object-fit: contain; }
 
 .nav-links { display: flex; gap: 25px; }
 .nav-links a {
@@ -52,7 +52,7 @@ ul { list-style: none; }
 .hero {
     background:
         linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
-        url("img/fundo.jpeg") center/cover no-repeat;
+        url("img/lenha 4k.png") center/cover no-repeat;
     padding: 100px 0;
     position: relative;
 }
@@ -80,13 +80,12 @@ ul { list-style: none; }
 .btn-primary:hover { background-color: #a00000; transform: scale(1.03); }
 .subtext-arrow { display: block; margin-top: 10px; color: var(--primary-yellow); font-size: 0.75rem; font-weight: 700; }
 
-/* Logo/pizza grande do hero — redondo, com sombra dourada */
+/* Logo/pizza grande do hero */
 .hero-image { flex-shrink: 50; }
 .hero-image img {
     width: 100%; max-width: 520px;
-    border-radius: 90%;
-    box-shadow: 0 0 40px rgba(255, 183, 3, 0.35), 0 0 80px rgba(209,0,0,0.25);
-}
+    border-radius: 0%;
+  }
 
 /* ====== FEATURES ====== */
 .features {
@@ -131,8 +130,6 @@ ul { list-style: none; }
     transition: 0.3s;
 }
 .pizza-card:hover { transform: translateY(-5px); border-color: var(--border-gold); }
-/* Card em destaque (marguerita no Figma) tem borda dourada */
-.pizza-card.featured { border: 2px solid var(--border-gold); box-shadow: 0 0 20px rgba(194,155,56,0.25); }
 
 .pizza-card img {
     width: 150px; height: 150px; object-fit: cover;
@@ -293,217 +290,6 @@ ul { list-style: none; }
     .carousel-track .pizza-card {
         flex: 0 0 100%; /* 1 visível */
     }
-}
-
-
-/* APARTIR DAQUI PAGINA LOGIN*/
-
-/* ====== RESET & VARIÁVEIS ====== */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-
-:root {
-    --bg-dark: #0a0a0a;
-    --bg-fire: #1a0505;        /* Vermelho bem escuro do fundo do hero */
-    --primary-red: #d10000;
-    --primary-red-dark: #7a0000;
-    --primary-yellow: #ffb703;
-    --text-light: #ffffff;
-    --text-gray: #b3b3b3;
-    --card-bg: #141414;
-    --border-gold: #c29b38;
-}
-
-body { background-color: var(--bg-dark); color: var(--text-light); overflow-x: hidden; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
-
-/* ====== NAVBAR ====== */
-.navbar {
-    background-color: #000;
-    border-bottom: 2px solid var(--primary-red);
-    position: sticky; top: 0; z-index: 1000;
-    padding: 10px 0;
-}
-.nav-container { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.nav-logo img { width: 80px; height: 80px; object-fit: contain; }
-
-.nav-links { display: flex; gap: 25px; }
-.nav-links a {
-    font-size: 1.0rem; font-weight: 700; letter-spacing: 1px;
-    transition: 0.3s;
-}
-.nav-links a:hover, .nav-links a.active { color: var(--primary-yellow); }
-
-/* Botão vermelho do topo com ícone da moto e duas linhas de texto */
-.btn-nav-order {
-    background-color: var(--primary-red);
-    display: flex; align-items: center; gap: 10px;
-    padding: 8px 18px; border-radius: 6px; color: #fff;
-    box-shadow: 0 2px 8px rgba(209,0,0,0.4);
-}
-.btn-nav-order i { font-size: 1.6rem; }
-.btn-nav-order div { display: flex; flex-direction: column; line-height: 1.1; }
-.btn-nav-order strong { font-size: 0.85rem; font-weight: 900; }
-.btn-nav-order small { font-size: 0.55rem; color: var(--primary-yellow); font-weight: 700; }
-
-/* ====== HERO ====== */
-/* Fundo com textura de fogo/madeira. Troque a URL por uma imagem sua se quiser. */
-.hero {
-    background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
-        url("img/fundo.jpeg") center/cover no-repeat;
-    padding: 100px 0;
-    position: relative;
-}
-.hero-container {
-    display: flex; align-items: center; justify-content: space-between; gap: 40px;
-}
-.hero-content { max-width: 1000px; }
-.hero-content h1 {
-    font-size: 3.2rem; font-weight: 900; line-height: 1.05;
-    margin-bottom: 20px; text-transform: uppercase;
-    text-shadow: 2px 2px 0 #000;
-}
-.hero-content .highlight { color: var(--primary-yellow); }
-.hero-content p { font-size: 0.95rem; color: var(--text-gray); margin-bottom: 25px; }
-
-/* Botão principal vermelho */
-.btn-primary {
-    display: inline-flex; align-items: center; gap: 8px;
-    background-color: var(--primary-red);
-    color: #fff; padding: 14px 28px; font-weight: 900;
-    border-radius: 8px; font-size: 1rem;
-    box-shadow: 0 4px 12px rgba(209,0,0,0.5);
-    transition: 0.3s; text-transform: uppercase;
-}
-.btn-primary:hover { background-color: #a00000; transform: scale(1.03); }
-.subtext-arrow { display: block; margin-top: 10px; color: var(--primary-yellow); font-size: 0.75rem; font-weight: 700; }
-
-/* Logo/pizza grande do hero — redondo, com sombra dourada */
-.hero-image { flex-shrink: 50; }
-.hero-image img {
-    width: 100%; max-width: 520px;
-    border-radius: 90%;
-    box-shadow: 0 0 40px rgba(255, 183, 3, 0.35), 0 0 80px rgba(209,0,0,0.25);
-}
-
-/* ====== FEATURES ====== */
-.features {
-    background-color: #0d0202;
-    border-top: 1px solid #330a0a;
-    border-bottom: 1px solid #330a0a;
-    padding: 25px 0;
-}
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-.feature-card { display: flex; align-items: center; gap: 12px; }
-.feature-card i { font-size: 1.8rem; color: var(--primary-red); }
-.feature-card h3 { font-size: 0.8rem; color: var(--primary-yellow); margin-bottom: 3px; letter-spacing: 0.5px; }
-.feature-card p { font-size: 0.7rem; color: var(--text-gray); }
-
-/* ====== PIZZAS ====== */
-.pizzas-section { padding: 60px 0; }
-.section-title { text-align: center; margin-bottom: 40px; }
-.section-title .subtitle {
-    font-family: 'Yellowtail', cursive;
-    color: var(--primary-yellow);
-    font-size: 2rem; display: block;
-}
-.section-title h2 {
-    font-size: 2.3rem; font-weight: 900; letter-spacing: 3px; margin-top: -5px;
-}
-
-.pizza-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
-}
-.pizza-card {
-    background-color: var(--card-bg);
-    border: 1px solid #2a2a2a;
-    border-radius: 12px;
-    padding: 25px 15px;
-    text-align: center;
-    transition: 0.3s;
-}
-.pizza-card:hover { transform: translateY(-5px); border-color: var(--border-gold); }
-/* Card em destaque (marguerita no Figma) tem borda dourada */
-.pizza-card.featured { border: 2px solid var(--border-gold); box-shadow: 0 0 20px rgba(194,155,56,0.25); }
-
-.pizza-card img {
-    width: 150px; height: 150px; object-fit: cover;
-    border-radius: 50%; margin-bottom: 15px;
-}
-.pizza-card h3 { font-size: 1rem; margin-bottom: 8px; letter-spacing: 1px; }
-.pizza-card p {
-    font-size: 0.7rem; color: var(--text-gray);
-    min-height: 45px; margin-bottom: 15px; line-height: 1.4;
-}
-.pizza-card .price { font-size: 1.2rem; font-weight: 900; color: var(--primary-yellow); }
-
-.center-btn { text-align: center; margin-top: 40px; }
-.btn-secondary {
-    display: inline-block;
-    border: 2px dashed var(--primary-yellow);
-    color: var(--primary-yellow);
-    padding: 12px 25px; font-weight: 700; border-radius: 6px;
-    transition: 0.3s; font-size: 0.85rem; letter-spacing: 1px;
-}
-.btn-secondary:hover { background-color: var(--primary-yellow); color: #000; }
-
-/* ====== COMBO FAMÍLIA ====== */
-.banner-combo { padding: 40px 0 60px 0; }
-.combo-box {
-    background: linear-gradient(90deg, #a00000 0%, #4a0000 100%);
-    border-radius: 12px;
-    padding: 25px 40px;
-    display: flex; align-items: center; justify-content: space-between; gap: 20px;
-    box-shadow: 0 10px 30px rgba(209,0,0,0.25);
-}
-.combo-text h2 { font-size: 2.2rem; font-weight: 900; line-height: 1; }
-.combo-info { text-align: left; }
-.combo-desc { font-size: 1rem; font-weight: 700; margin-bottom: 8px; line-height: 1.2; }
-.combo-price { font-size: 0.75rem; }
-.combo-price span { display: block; font-size: 1.8rem; font-weight: 900; color: var(--primary-yellow); }
-
-.combo-img img { width: 250px; }
-.combo-cta { text-align: center; }
-.combo-cta small { display: block; margin-top: 8px; color: var(--primary-yellow); font-size: 0.7rem; font-weight: 700; }
-
-/* ====== FOOTER ====== */
-.footer { background-color: #050505; border-top: 1px solid #222; padding: 40px 0; }
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1.2fr 1fr;
-    gap: 30px;
-    align-items: start;
-}
-.footer-logo { width: 100px; margin-bottom: 8px; }
-.footer-brand p { font-size: 0.8rem; color: var(--text-gray); margin: 8px 0; }
-.socials a { font-size: 1.8rem; margin-right: 20.0px; color: var(--text-light); transition: 0.3s; }
-.socials a:hover { color: var(--primary-yellow); }
-
-.footer-info { display: flex; gap: 12px; }
-.footer-info i { font-size: 1.4rem; color: var(--primary-red); margin-top: 8px; }
-.footer-info h4 { font-size: 0.75rem; color: var(--primary-yellow); margin-bottom: 10px; letter-spacing: 1px; }
-.footer-info p { font-size: 0.75rem; color: var(--text-gray); line-height: 1.5; }
-
-/* ====== RESPONSIVIDADE MOBILE ====== */
-@media (max-width: 900px) {
-    .nav-links { display: none; }
-    .hero-container { flex-direction: column; text-align: center; }
-    .hero-content h1 { font-size: 2.2rem; }
-    .combo-box { flex-direction: column; text-align: center; }
-    .combo-img img { width: 100%; max-width: 220px; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 500px) {
-    .footer-grid { grid-template-columns: 1fr; }
-    .btn-nav-order small { display: none; }
 }
 
 
@@ -983,4 +769,163 @@ input::placeholder{
 
     }
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CARDÁPIO */
+
+/* ============================================
+   PÁGINA CARDÁPIO
+   Complementa o style.css (variáveis, header, footer)
+   ============================================ */
+
+/* ---- TÍTULO DA PÁGINA ---- */
+.page-title {
+    text-align: center;
+    padding: 40px 0 20px;
+}
+.page-title h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+.breadcrumb {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+.breadcrumb a { color: var(--primary-yellow); text-decoration: none; }
+.breadcrumb span { color: var(--primary-red); font-weight: 600; }
+
+/* ---- BARRA DE CATEGORIAS ---- */
+.categories { padding: 20px 0 30px; }
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+}
+.cat-item {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 18px 8px;
+    color: var(--text-light);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+}
+.cat-item .cat-icon {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+.cat-item:hover { border-color: var(--primary-red); }
+.cat-item.active {
+    background: var(--primary-red);
+    border-color: var(--primary-red);
+    box-shadow: 0 4px 14px rgba(200,20,20,0.4);
+}
+
+/* ---- GRID DE PIZZAS ---- */
+.menu { padding-bottom: 0; }
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 40px;
+}
+.menu-card {
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 18px 12px;
+    text-align: center;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.menu-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-yellow);
+}
+.menu-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+.menu-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));
+}
+.menu-card h3 {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    margin-bottom: 6px;
+}
+.menu-card .price {
+    color: var(--primary-yellow);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Estado "escondido" pelo filtro */
+.menu-card.hidden { display: none; }
+
+/* ---- FAIXA VERMELHA INFERIOR ---- */
+.menu-footer-banner {
+    background: var(--primary-red);
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 30px;
+}
+.menu-footer-banner p {
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 3px;
+    font-size: 1.1rem;
+}
+
+/* ---- RESPONSIVO ---- */
+@media (max-width: 992px) {
+    .menu-grid { grid-template-columns: repeat(3, 1fr); }
+    .category-list { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+    .menu-grid { grid-template-columns: repeat(2, 1fr); }
+    .category-list { grid-template-columns: repeat(2, 1fr); }
+    .page-title h1 { font-size: 1.6rem; }
 }

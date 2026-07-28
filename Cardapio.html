@@ -1,11 +1,159 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio</title>
+    <title>Anne's Pizza - O Melhor Sabor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fontes: Montserrat (corpo/títulos) + Yellowtail (script "As mais pedidas") + Bebas (logo alternativo) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;900&family=Yellowtail&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
+    <!-- ==================== NAVBAR ==================== -->
+    <!-- Barra superior fixa, fundo preto, borda vermelha embaixo. -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <!-- LOGO pequeno (imagem redonda do Anne's) no canto esquerdo -->
+            <div class="nav-logo">
+                <img src="img\Anne's pizza 1.png" alt="Anne's Pizza">
+            </div>
+
+            <!-- Links de navegação centralizados -->
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">INÍCIO</a></li>
+                    <li><a href="#cardapio">CARDÁPIO</a></li>
+                    <li><a href="#promocoes">PROMOÇÕES</a></li>
+                    <li><a href="#sobre">SOBRE NÓS</a></li>
+                    <li><a href="login.html">CADASTRO/LOGIN</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botão "PEÇA AGORA" vermelho à direita -->
+            <a href="#" class="btn-nav-order">
+                <i class="fa-solid fa-motorcycle"></i>
+                <div>
+                    <strong>PEÇA AGORA</strong>
+                    <small>RÁPIDO, QUENTE E DELICIOSO!</small>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- ===== TÍTULO + BREADCRUMB ===== -->
+    <section class="page-title">
+        <div class="container">
+            <h1>NOSSO CARDÁPIO</h1>
+            <p class="breadcrumb">
+                <a href="index.html">Início</a> &nbsp;›&nbsp; <span>Cardápio</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== FILTRO DE CATEGORIAS ===== -->
+    <section class="categories">
+        <div class="container">
+            <div class="category-list">
+                <!-- data-filter define qual categoria mostrar; "all" = todas -->
+                <button class="cat-item active" data-filter="all">
+                    <div class="cat-icon">🍕</div>
+                    <span>TODAS</span>
+                </button>
+                <button class="cat-item" data-filter="tradicional">
+                    <div class="cat-icon">🍕</div>
+                    <span>TRADICIONAIS</span>
+                </button>
+                <button class="cat-item" data-filter="especial">
+                    <div class="cat-icon">🍕</div>
+                    <span>ESPECIAIS</span>
+                </button>
+                <button class="cat-item" data-filter="doce">
+                    <div class="cat-icon">🧁</div>
+                    <span>DOCES</span>
+                </button>
+                <button class="cat-item" data-filter="bebida">
+                    <div class="cat-icon">🥤</div>
+                    <span>BEBIDAS</span>
+                </button>
+                <button class="cat-item" data-filter="combo">
+                    <div class="cat-icon">🍔</div>
+                    <span>COMBOS</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GRID DE PIZZAS ===== -->
+    <section class="menu">
+        <div class="container">
+            <div class="menu-grid">
+
+                <article class="menu-card" data-category="tradicional">
+                    <div class="menu-img"><img src="img\CALABRESA.png" alt="Pizza Calabresa"></div>
+                    <h3>CALABRESA</h3>
+                    <p class="price">R$ 49,90</p>
+                </article>
+
+                <article class="menu-card" data-category="tradicional">
+                    <div class="menu-img"><img src="img\MARGUERITA png.png" alt="Pizza Marguerita"></div>
+                    <h3>MARGUERITA</h3>
+                    <p class="price">R$ 50,90</p>
+                </article>
+
+                <article class="menu-card" data-category="especial">
+                    <div class="menu-img"><img src="img\FRANGO COM CATUP.png" alt="Pizza Frango com Catupiry"></div>
+                    <h3>FRANGO COM CATUPIRY</h3>
+                    <p class="price">R$ 43,90</p>
+                </article>
+
+                <article class="menu-card" data-category="tradicional">
+                    <div class="menu-img"><img src="img\PORTUGUESA image 10.png" alt="Pizza Portuguesa"></div>
+                    <h3>PORTUGUESA</h3>
+                    <p class="price">R$ 53,90</p>
+                </article>
+
+                <article class="menu-card" data-category="doce">
+                    <div class="menu-img"><img src="img\CHOCOLATE.png" alt="Pizza de Chocolate"></div>
+                    <h3>CHOCOLATE</h3>
+                    <p class="price">R$ 60,90</p>
+                </article>
+
+                <article class="menu-card" data-category="especial">
+                    <div class="menu-img"><img src="img\PIZZA DE ATUM.png" alt="Pizza de Atum"></div>
+                    <h3>ATUM</h3>
+                    <p class="price">R$ 59,90</p>
+                </article>
+
+                <article class="menu-card" data-category="especial">
+                    <div class="menu-img"><img src="img\PIZZA CARNE DE SOL.png" alt="Pizza Carne de Sol"></div>
+                    <h3>CARNE DO SOL</h3>
+                    <p class="price">R$ 54,90</p>
+                </article>
+
+                <article class="menu-card" data-category="tradicional">
+                    <div class="menu-img"><img src="img\PIZZA DE MILHO.png" alt="Pizza de Milho"></div>
+                    <h3>MILHO</h3>
+                    <p class="price">R$ 33,90</p>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- Faixa vermelha inferior -->
+        <div class="menu-footer-banner">
+            <p>O SABOR QUE ENCANTA</p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER (mesmo da home) ===== -->
+    <footer class="main-footer">
+        <!-- reaproveite o mesmo footer do index.html -->
+    </footer>
+
+    <script src="cardapio.js"></script>
 </body>
 </html>
