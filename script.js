@@ -1,56 +1,61 @@
-const track = document.querySelector(".carousel-track");
-const prevBtn = document.querySelector(".carousel-btn.prev");
-const nextBtn = document.querySelector(".carousel-btn.next");
+document.addEventListener("DOMContentLoaded", () => {
 
-const cards = [...document.querySelectorAll(".pizza-card")];
+    const track = document.querySelector(".carousel-track");
+    const prevBtn = document.querySelector(".carousel-btn.prev");
+    const nextBtn = document.querySelector(".carousel-btn.next");
+    const cards = [...document.querySelectorAll(".pizza-card")];
 
-let index = 0;
+    if (!track || !prevBtn || !nextBtn || cards.length === 0) return;
 
-// quantidade de cards visíveis
-function visibleCards() {
-    if (window.innerWidth <= 600) return 1;
-    if (window.innerWidth <= 992) return 2;
-    return 4;
-}
+    let index = 0;
 
-function moveCarousel() {
-
-    const visible = visibleCards();
-
-    const cardWidth = cards[0].offsetWidth + 20;
-
-    track.style.transform =
-        `translateX(-${index * cardWidth}px)`;
-
-    prevBtn.disabled = index === 0;
-
-    nextBtn.disabled =
-        index >= cards.length - visible;
-}
-
-nextBtn.addEventListener("click", () => {
-
-    const visible = visibleCards();
-
-    if(index < cards.length - visible){
-        index++;
-        moveCarousel();
+    function visibleCards() {
+        if (window.innerWidth <= 600) return 1;
+        if (window.innerWidth <= 992) return 2;
+        return 4;
     }
 
-});
+    function moveCarousel() {
 
-prevBtn.addEventListener("click", () => {
+        const visible = visibleCards();
 
-    if(index > 0){
-        index--;
-        moveCarousel();
+        index = Math.min(index, cards.length - visible);
+
+        const gap = parseInt(getComputedStyle(track).gap);
+
+        const cardWidth = cards[0].offsetWidth + gap;
+
+        track.style.transform = `translateX(-${index * cardWidth}px)`;
+
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index >= cards.length - visible;
     }
 
+    nextBtn.addEventListener("click", () => {
+
+        const visible = visibleCards();
+
+        if (index < cards.length - visible) {
+            index++;
+            moveCarousel();
+        }
+
+    });
+
+    prevBtn.addEventListener("click", () => {
+
+        if (index > 0) {
+            index--;
+            moveCarousel();
+        }
+
+    });
+
+    window.addEventListener("resize", moveCarousel);
+
+    moveCarousel();
+
 });
-
-window.addEventListener("resize", moveCarousel);
-
-moveCarousel();
 
 /* Filtro simples por categoria — clique numa aba e mostra só os cards
    cujo data-category bate com o data-filter (ou todos, se "all"). */
